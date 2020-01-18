@@ -66,7 +66,7 @@ document.getElementById("search-github").addEventListener("click", () => {
 });
 
 document
-  .getElementById("search-stackOverflow")
+  .getElementById("search-stackoverflow")
   .addEventListener("click", () => {
     let query = document.getElementById("input-box").value;
     const url = `https://duckduckgo.com/?q= !so ${query}`;
@@ -93,7 +93,7 @@ document.getElementById("search-quora").addEventListener("click", () => {
 
 document.getElementById("search-translate").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !t ${query}`;
+  const url = `https://duckduckgo.com/?q= !tr ${query}`;
   window.open(url);
 });
 
