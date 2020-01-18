@@ -12,7 +12,18 @@ async function handleDefine() {
   if (Abstract === "") {
     Abstract = "<code>cannot find definition, try searching</code>";
   }
-  document.getElementById("definition").innerHTML = Abstract;
+  document.getElementById("definition").innerHTML = reduceDefinition(Abstract);
+}
+
+function reduceDefinition(definition) {
+  let strings = definition.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+  let final = "";
+  let index = 0;
+  while (final.length < 300 && index < strings.length) {
+    final += strings[index];
+    ++index;
+  }
+  return final;
 }
 
 function handleSearch() {
