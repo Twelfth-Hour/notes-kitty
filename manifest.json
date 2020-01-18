@@ -2,6 +2,14 @@
   "name": "Notes-Kitty",
   "version": "1.0",
   "description": "Note Creator",
+  "permissions": ["storage", "declarativeContent", "activeTab", "tabs", "*://*/*"],
+  "content_scripts": [{
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "js": ["content.js"]
+  }],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
