@@ -32,4 +32,23 @@ document.getElementById("search-button").addEventListener("click", () => {
   handleSearch();
 });
 
-document.getElementById("clean-button").addEventListener("click", () => {});
+document.getElementById("clean-button").addEventListener("click", () => {
+  /* eslint-disable-next-line no-undef*/
+  chrome.tabs.executeScript({
+    file: "src/scripts/clean.js"
+  });
+});
+
+document.getElementById("dark-button").addEventListener("click", () => {
+  /* eslint-disable-next-line no-undef*/
+  chrome.tabs.executeScript({
+    file: "src/scripts/dark-theme.js"
+  });
+});
+
+document.getElementById("edit-button").addEventListener("click", () => {
+  /* eslint-disable-next-line no-undef*/
+  chrome.tabs.executeScript({
+    file: "src/scripts/content-editable.js"
+  });
+});
