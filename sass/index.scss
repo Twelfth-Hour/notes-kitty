@@ -1,8 +1,28 @@
 body {
-  width: 400px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
+
+  button {
+    text-align: center;
+    width: 120px;
+  }
+
+  .column {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #first-column {
+    width: 280px;
+
+    #search-button-container {
+      text-align: center;
+    }
+  }
 
   #root {
     display: flex;
+    justify-content: space-between;
   }
 }
