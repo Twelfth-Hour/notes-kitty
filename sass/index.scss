@@ -1,10 +1,22 @@
+$neo-shadow: 6px 6px 16px rgba(209, 205, 199, 0.7),
+-6px -6px 16px rgba(255, 255, 255, 0.7);
+
+$background: #efeeee;
+
+$neo-border: rgba(255, 255, 255, 0.2);
+
 body {
+  background-color: $background;
   width: 500px;
   height: 300px;
+  padding: 10px;
 
   button {
     text-align: center;
     width: 120px;
+    box-shadow: $neo-shadow;
+    border: $neo-border;
+    margin: 5px;
   }
 
   .column {
@@ -19,10 +31,38 @@ body {
     #search-button-container {
       text-align: center;
     }
+
+    input {
+      box-shadow: $neo-shadow;
+      border: $neo-border;
+    }
+
+    #icon-bar {
+      margin-top: 10px;
+
+      .icon {
+        margin-top: 100px;
+        border-radius: 4px;
+        width: 150px;
+        height: 150px;
+        padding: 5px;
+        background-color: $neo-shadow;
+        box-shadow: $neo-shadow;
+        border: $neo-border;
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+      }
+    }
   }
 
   #root {
     display: flex;
     justify-content: space-between;
+  }
+
+  #definition {
+    padding: 5px;
+    color: black;
   }
 }
