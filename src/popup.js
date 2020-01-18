@@ -55,13 +55,13 @@ document.getElementById("edit-button").addEventListener("click", () => {
 
 document.getElementById("search-wikipedia").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !w ${query}`;
+  const url = `https://en.wikipedia.org/wiki/${query}`;
   window.open(url);
 });
 
 document.getElementById("search-github").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !gh ${query}`;
+  const url = `https://github.com/search?utf8=%E2%9C%93&q=${query}`;
   window.open(url);
 });
 
@@ -69,42 +69,42 @@ document
   .getElementById("search-stackoverflow")
   .addEventListener("click", () => {
     let query = document.getElementById("input-box").value;
-    const url = `https://duckduckgo.com/?q= !so ${query}`;
+    const url = `https://stackoverflow.com/search?q=${query}`;
     window.open(url);
   });
 
 document.getElementById("search-wolfram").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !wolf ${query}`;
+  const url = `https://www.wolframalpha.com/input/?i=${query}`;
   window.open(url);
 });
 
 document.getElementById("search-scholar").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !scholar ${query}`;
+  const url = `https://scholar.google.com/scholar?q=${query}`;
   window.open(url);
 });
 
 document.getElementById("search-quora").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !q ${query}`;
+  const url = `https://www.quora.com/search?q=${query}`;
   window.open(url);
 });
 
 document.getElementById("search-translate").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !tr ${query}`;
+  const url = `https://translate.google.com/#auto/en/${query}`;
   window.open(url);
 });
 
 document.getElementById("search-youtube").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !yt ${query}`;
+  const url = `https://www.youtube.com/results?search_query=${query}`;
   window.open(url);
 });
 
 document.getElementById("search-linkedin").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q= !li ${query}`;
+  const url = `https://www.linkedin.com/search/results/all/?keywords=${query}`;
   window.open(url);
 });
