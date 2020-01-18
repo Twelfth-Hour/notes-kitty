@@ -2,15 +2,6 @@
   "name": "Notes-Kitty",
   "version": "1.0",
   "description": "Note Creator",
-  "content_scripts": [
-    {
-    "matches": [
-        "http://*/*",
-        "https://*/*"
-        ],
-    "js": ["content.js"]
-    }
-  ],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
