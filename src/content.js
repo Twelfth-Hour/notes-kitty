@@ -4,7 +4,7 @@ let currentLocation = window.location.href;
 if (currentLocation.includes("duckduckgo")) {
   chrome.runtime.sendMessage(
     {
-      message: "Run background"
+      run: "Run background"
     },
     function(response) {
       console.log(response);
