@@ -17,7 +17,7 @@ async function handleDefine() {
 
 function handleSearch() {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q=${query}`;
+  const url = `https://duckduckgo.com/?q=${query}&hash=66a045b452102c59d840ec097d59d9467e13a3f34f6494e539ffd32c1bb35f18`;
   /* eslint-disable-next-line no-undef*/
   chrome.tabs.create({
     url: url
@@ -31,3 +31,5 @@ document.getElementById("define-button").addEventListener("click", async () => {
 document.getElementById("search-button").addEventListener("click", () => {
   handleSearch();
 });
+
+document.getElementById("clean-button").addEventListener("click", () => {});
