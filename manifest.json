@@ -3,6 +3,7 @@
   "version": "1.0",
   "description": "Note Creator",
   "permissions": ["cookies", "contextMenus", "storage", "declarativeContent", "activeTab", "tabs", "*://*/*"],
+  "content_security_policy": "script-src  'self' https://www.gstatic.com https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
   "content_scripts": [{
     "matches": [
       "http://*/*",

@@ -35,6 +35,14 @@ function handleSearch() {
   });
 }
 
+function handleData() { 
+  let query = document.getElementById("input-box").value;
+  let db = firebase.firestore();
+  db.collection("queries").add({
+    query: query
+  });
+}
+
 document.getElementById("define-button").addEventListener("click", async () => {
   handleDefine();
 });
