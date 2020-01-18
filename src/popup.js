@@ -17,7 +17,7 @@ async function handleDefine() {
 
 function handleSearch() {
   let query = document.getElementById("input-box").value;
-  const url = `https://duckduckgo.com/?q=${query}&hash=66a045b452102c59d840ec097d59d9467e13a3f34f6494e539ffd32c1bb35f18`;
+  const url = `https://duckduckgo.com/?q=${query}&hash=66a045b452102c59d840ec097d59d9467e13a3f34f6494e539ffd32c1bb35f188&ia=web`;
   /* eslint-disable-next-line no-undef*/
   chrome.tabs.create({
     url: url
