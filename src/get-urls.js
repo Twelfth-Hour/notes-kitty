@@ -11,6 +11,3 @@ if (urls.length !== 0) {
     window.open(urlName);
   }
 }
-
-
-
