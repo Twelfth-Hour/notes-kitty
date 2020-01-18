@@ -57,13 +57,14 @@ function setStyle() {
 }
 
 const siteConfig = {
-  wiki: [
+  wikipedia: [
     ".mw-jump-link",
     "annotation",
     ".reference",
     ".mw-editsection",
     ".reflist",
-    "#catlinks"
+    "#catlinks",
+    "table.mbox-small.plainlinks.sistersitebox"
   ],
   hackerearth: [
     "div.left-section",
@@ -72,7 +73,7 @@ const siteConfig = {
     "#tutorial-problem",
     ".load-all-comments"
   ],
-  gfg: [
+  geeksforgeeks: [
     ".leftSideBarParent",
     "#scrollTopBtn",
     "#personalNoteDiv",
@@ -83,7 +84,7 @@ const siteConfig = {
     "#comment",
     "#practiceLinkDiv"
   ],
-  javapoint: [
+  javatpoint: [
     "#bottomnextup",
     "#bottomnext",
     ".nexttopicdiv",
@@ -101,7 +102,7 @@ const siteConfig = {
     ".ne.jd.n.ep.p",
     ".pe.r.pf.pg"
   ],
-  w3: [
+  w3schools: [
     ".w3-container",
     "#googleSearch",
     ".w3-clear.nextprev",
@@ -111,21 +112,9 @@ const siteConfig = {
 };
 
 function siteConfigClean() {
-  if (document.domain.includes("wikipedia")) {
-    siteConfig.wiki.forEach(query => removeQuery(query));
-  } else if (document.domain.includes("hackerearth")) {
-    siteConfig.hackerearth.forEach(query => removeQuery(query));
-  } else if (document.domain.includes("geeksforgeeks")) {
-    siteConfig.gfg.forEach(query => removeQuery(query));
-  } else if (document.domain.includes("javatpoint")) {
-    siteConfig.javapoint.forEach(query => removeQuery(query));
-  } else if (document.domain.includes("tutorialspoint")) {
-    siteConfig.tutorialspoint.forEach(query => removeQuery(query));
-  } else if (document.domain.includes("medium")) {
-    siteConfig.medium.forEach(query => removeQuery(query));
-  } else if (document.domain.includes("w3schools")) {
-    siteConfig.w3.forEach(query => removeQuery(query));
-  }
+  Object.keys(siteConfig).forEach(domain =>
+    siteConfig[domain].forEach(query => removeQuery(query))
+  );
 }
 
 document.querySelector("*").removeAttribute("class");
