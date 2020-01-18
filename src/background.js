@@ -3,7 +3,8 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.runtime.onMessage.addListener(request => {
     if (request.run == "Run background") {
       chrome.tabs.onUpdated.addListener(tabId => {
-        chrome.tabs.executeScript(tabId, 
+        chrome.tabs.executeScript(
+          tabId,
           {
             file: "src/get-urls.js"
           },

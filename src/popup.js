@@ -53,10 +53,58 @@ document.getElementById("edit-button").addEventListener("click", () => {
   });
 });
 
-document.getElementById("select-button").addEventListener("click", () => {
-  chrome.tabs.executeScript({
-    code: "window.getSelection().toString();"
-  },selection => {
-    document.getElementById("definition").innerHTML = selection;
-  })
+document.getElementById("search-wikipedia").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !w ${query}`;
+  window.open(url);
+});
+
+document.getElementById("search-github").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !gh ${query}`;
+  window.open(url);
+});
+
+document
+  .getElementById("search-stackOverflow")
+  .addEventListener("click", () => {
+    let query = document.getElementById("input-box").value;
+    const url = `https://duckduckgo.com/?q= !so ${query}`;
+    window.open(url);
+  });
+
+document.getElementById("search-wolfram").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !wolf ${query}`;
+  window.open(url);
+});
+
+document.getElementById("search-scholar").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !scholar ${query}`;
+  window.open(url);
+});
+
+document.getElementById("search-quora").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !q ${query}`;
+  window.open(url);
+});
+
+document.getElementById("search-translate").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !t ${query}`;
+  window.open(url);
+});
+
+document.getElementById("search-youtube").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !yt ${query}`;
+  window.open(url);
+});
+
+document.getElementById("search-linkedin").addEventListener("click", () => {
+  let query = document.getElementById("input-box").value;
+  const url = `https://duckduckgo.com/?q= !li ${query}`;
+  window.open(url);
 });
