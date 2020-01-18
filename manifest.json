@@ -8,10 +8,10 @@
       "http://*/*",
       "https://*/*"
     ],
-    "js": ["content.js"]
+    "js": ["src/content.js"]
   }],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["src/background.js"],
     "persistent": false
   },
   "browser_action": {
