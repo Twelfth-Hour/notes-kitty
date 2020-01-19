@@ -1,5 +1,6 @@
 /* eslint-disable-next-line */
 chrome.storage.sync.get(["data"], items => {
+  items.data = items.data || [];
   let content = "";
   items.data.forEach(history => {
     content += `<a class="recent">${history}</a>`;
@@ -196,11 +197,13 @@ document.getElementById("report-button").addEventListener("click", () => {
     result => {
       /* eslint-disable-next-line no-undef */
       let db = firebase.firestore();
-      db.collection("bug-report").add({
-        bug: result[0]
-      }).then(() =>{
-        alert("Bug has been successfully reported.");
-      })
+      db.collection("bug-report")
+        .add({
+          bug: result[0]
+        })
+        .then(() => {
+          alert("Bug has been successfully reported.");
+        });
     }
   );
 });
