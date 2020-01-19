@@ -197,6 +197,10 @@ document.getElementById("search-linkedin").addEventListener("click", () => {
 });
 
 document.getElementById("report-button").addEventListener("click", () => {
+  document.getElementById("bug-report-success").innerText = "Bug Report Sent!";
+  document
+    .getElementById("report-icon")
+    .setAttribute("src", "./assets/icons/checkmark.svg");
   /* eslint-disable-next-line no-undef */
   chrome.tabs.executeScript(
     {
@@ -209,9 +213,7 @@ document.getElementById("report-button").addEventListener("click", () => {
         .add({
           bug: result[0]
         })
-        .then(() => {
-          alert("Bug has been successfully reported.");
-        });
+        .then(() => {});
     }
   );
 });

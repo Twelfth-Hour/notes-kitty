@@ -51,26 +51,42 @@ body {
     #icon-bar {
       margin-top: 10px;
       text-align: center;
-
-      .icon {
-        margin-top: 100px;
-        border-radius: 4px;
-        width: 150px;
-        height: 150px;
-        padding: 5px;
-        background-color: $neo-shadow;
-        box-shadow: $neo-shadow;
-        border: $neo-border;
-        width: 30px;
-        height: 30px;
-        margin: 5px;
-      }
     }
+  }
+
+
+  #second-column {
+    text-align: right;
   }
 
   #root {
     display: flex;
     justify-content: space-between;
+  }
+
+  .icon {
+    margin-top: 100px;
+    border-radius: 4px;
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    background-color: $neo-shadow;
+    box-shadow: $neo-shadow;
+    border: $neo-border;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+
+  #report-button {
+    text-align: right;
+
+  }
+
+  #bug-report-success {
+    color: #21bf73;
+    font-size: 0.75em;
+    font-weight: bold;
   }
 
   #definition {
