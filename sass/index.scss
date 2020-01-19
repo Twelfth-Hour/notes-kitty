@@ -26,13 +26,24 @@ body {
   }
 
   #first-column {
-    width: 280px;
+    width: 300px;
+
+    .recent {
+      opacity: 70%;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin: 0 12px 10px 0;
+      border: 0;
+      box-shadow: none;
+      display: inline;
+    }
 
     #search-button-container {
       text-align: center;
     }
 
     input {
+      margin-top: 10px;
       box-shadow: $neo-shadow;
       border: $neo-border;
     }
