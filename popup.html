@@ -10,7 +10,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
+      https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
@@ -43,8 +43,12 @@
       <button id="clean-button">Clean</button>
       <button id="dark-button">Dark</button>
       <button id="edit-button">Edit</button>
-      <button id="report-button">Report</button>
       <button>Print</button>
+      <div id="report-button">
+        <img id="report-icon" class="icon" src="./assets/icons/notification.svg"></img>
+      </div>
+      <span id="bug-report-success"></span>
+
     </div>
   </div>
   <h6 id="definition"></h6>
