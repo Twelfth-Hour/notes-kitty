@@ -35,8 +35,10 @@ function handleSearch() {
   });
 }
 
-function handleData() { 
+/* eslint-disable-next-line no-unused-vars */
+function handleData() {
   let query = document.getElementById("input-box").value;
+  /* eslint-disable-next-line no-undef */
   let db = firebase.firestore();
   db.collection("queries").add({
     query: query
