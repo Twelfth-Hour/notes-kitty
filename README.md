@@ -1,5 +1,7 @@
 # Notes Kitty
 
+> Runner up idea for [dotslash](http://hackdotslash.co.in/) hackathon.
+
 Want to make searching and organizing your queries easy? Our extension will open you the top links based on your query and not only that, you'll be able to remove all the advertisements and unncessary data on the website by cleaning the website with the click of one button. We also provide additional features including dark mode and custom editable notes on the current link itself. One can even add notes and it will be stored as a pdf file . This will make the creation and organization of notes much easier.
 
 ### Prerequisites
