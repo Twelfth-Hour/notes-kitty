@@ -1,7 +1,7 @@
 {
-  "name": "Notes-Kitty",
-  "version": "1.0",
-  "description": "Note Creator",
+  "name": "Notes Kitty",
+  "version": "1.1",
+  "description": "The last note taking app you'll ever need.",
   "permissions": ["cookies", "contextMenus", "storage", "declarativeContent", "activeTab", "tabs", "*://*/*"],
   "content_security_policy": "script-src  'self' https://www.gstatic.com https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
   "content_scripts": [{
