@@ -40,9 +40,29 @@ function reduceDefinition(definition) {
   }
   return final;
 }
+/* eslint-disable-next-line no-unused-vars */
+function countQueries() {
+  /* eslint-disable-next-line no-undef*/
+  let db = firebase.firestore();
+  return db
+    .collection("queries")
+    .get()
+    .then(snapShot => {
+      let count = 1;
+      snapShot.forEach(() => {
+        count += 1;
+      });
+      return count;
+    });
+}
 
 function handleSearch() {
   let query = document.getElementById("input-box").value;
+  if (query === "") {
+    document.getElementById("definition").innerHTML =
+      "<code>Enter Search Query</code>";
+    return;
+  }
   const url = `https://duckduckgo.com/?q=${query}&hash=66a045b452102c59d840ec097d59d9467e13a3f34f6494e539ffd32c1bb35f188&ia=web`;
   /* eslint-disable-next-line no-undef */
   chrome.tabs.create({
@@ -51,12 +71,14 @@ function handleSearch() {
 }
 
 /* eslint-disable-next-line no-unused-vars */
-function handleData() {
+async function handleData() {
   let query = document.getElementById("input-box").value;
-  /* eslint-disable-next-line no-undef */
+  /* eslint-disable-next-line no-undef*/
   let db = firebase.firestore();
+  let count = await countQueries();
   db.collection("queries").add({
-    query: query
+    query: query,
+    count: count
   });
 }
 
@@ -163,4 +185,20 @@ document.getElementById("search-linkedin").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
   const url = `https://www.linkedin.com/search/results/all/?keywords=${query}`;
   window.open(url);
+});
+
+document.getElementById("report-button").addEventListener("click", () => {
+  /* eslint-disable-next-line no-undef */
+  chrome.tabs.executeScript(
+    {
+      code: "window.location.href;"
+    },
+    result => {
+      /* eslint-disable-next-line no-undef */
+      let db = firebase.firestore();
+      db.collection("bug-report").add({
+        bug: result[0]
+      });
+    }
+  );
 });
