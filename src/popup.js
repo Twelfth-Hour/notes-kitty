@@ -87,7 +87,8 @@ document.getElementById("define-button").addEventListener("click", async () => {
   let string = document.querySelector("#input-box").value;
   /* eslint-disable-next-line no-undef */
   chrome.storage.sync.get(["data"], items => {
-    let data = [...items.data];
+    let dataImmutable = items.data || [];
+    let data = [...dataImmutable];
     if (data.length > 2) data.pop();
     data.unshift(string);
     /* eslint-disable-next-line no-undef */
@@ -101,7 +102,8 @@ document.getElementById("search-button").addEventListener("click", () => {
   let string = document.querySelector("#input-box").value;
   /* eslint-disable-next-line no-undef */
   chrome.storage.sync.get(["data"], items => {
-    let data = [...items.data];
+    let dataImmutable = items.data || [];
+    let data = [...dataImmutable];
     if (data.length > 2) data.pop();
     data.unshift(string);
     /* eslint-disable-next-line no-undef */
