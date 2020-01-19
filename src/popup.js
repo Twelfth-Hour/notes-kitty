@@ -93,13 +93,17 @@ document.getElementById("define-button").addEventListener("click", async () => {
   chrome.storage.sync.get(["data"], items => {
     let dataImmutable = items.data || [];
     let data = [...dataImmutable];
-    if (data.length > 2) data.pop();
-    data.unshift(string);
-    /* eslint-disable-next-line no-undef */
-    chrome.storage.sync.set({ data }, function() {
+    if (!data.includes(string)) {
+      if (data.length > 2) data.pop();
+      data.unshift(string);
+      /* eslint-disable-next-line no-undef */
+      chrome.storage.sync.set({ data }, function() {
+        handleDefine();
+        getRecent();
+      });
+    } else {
       handleDefine();
-      getRecent();
-    });
+    }
   });
 });
 
@@ -109,13 +113,17 @@ document.getElementById("search-button").addEventListener("click", () => {
   chrome.storage.sync.get(["data"], items => {
     let dataImmutable = items.data || [];
     let data = [...dataImmutable];
-    if (data.length > 2) data.pop();
-    data.unshift(string);
-    /* eslint-disable-next-line no-undef */
-    chrome.storage.sync.set({ data }, function() {
+    if (!data.includes(string)) {
+      if (data.length > 2) data.pop();
+      data.unshift(string);
+      /* eslint-disable-next-line no-undef */
+      chrome.storage.sync.set({ data }, function() {
+        handleSearch();
+        getRecent();
+      });
+    } else {
       handleSearch();
-      getRecent();
-    });
+    }
   });
 });
 
