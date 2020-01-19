@@ -217,9 +217,12 @@ document.getElementById("report-button").addEventListener("click", () => {
     result => {
       /* eslint-disable-next-line no-undef */
       let db = firebase.firestore();
+      let split = result[0].split("/");
+      let domain = split[0] + "//" + split[2];
       db.collection("bug-report")
         .add({
-          bug: result[0]
+          bug: result[0],
+          domain: domain
         })
         .then(() => {});
     }
