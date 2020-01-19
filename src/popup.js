@@ -1,18 +1,22 @@
-/* eslint-disable-next-line */
-chrome.storage.sync.get(["data"], items => {
-  items.data = items.data || [];
-  let content = "";
-  items.data.forEach(history => {
-    content += `<a class="recent">${history}</a>`;
-  });
-  document.querySelector("#recent").innerHTML = content;
-  document.querySelectorAll(".recent").forEach(e => {
-    console.log(e);
-    e.addEventListener("click", () => {
-      document.querySelector("#input-box").value = e.innerHTML;
+function getRecent() {
+  /* eslint-disable-next-line */
+  chrome.storage.sync.get(["data"], items => {
+    items.data = items.data || [];
+    let content = "";
+    items.data.forEach(history => {
+      content += `<a class="recent">${history}</a>`;
+    });
+    document.querySelector("#recent").innerHTML = content;
+    document.querySelectorAll(".recent").forEach(e => {
+      console.log(e);
+      e.addEventListener("click", () => {
+        document.querySelector("#input-box").value = e.innerHTML;
+      });
     });
   });
-});
+}
+
+getRecent();
 
 async function handleDefine() {
   let query = document.getElementById("input-box").value;
@@ -94,6 +98,7 @@ document.getElementById("define-button").addEventListener("click", async () => {
     /* eslint-disable-next-line no-undef */
     chrome.storage.sync.set({ data }, function() {
       handleDefine();
+      getRecent();
     });
   });
 });
@@ -109,6 +114,7 @@ document.getElementById("search-button").addEventListener("click", () => {
     /* eslint-disable-next-line no-undef */
     chrome.storage.sync.set({ data }, function() {
       handleSearch();
+      getRecent();
     });
   });
 });
