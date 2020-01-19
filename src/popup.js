@@ -148,6 +148,13 @@ document.getElementById("edit-button").addEventListener("click", () => {
   });
 });
 
+document.getElementById("print-button").addEventListener("click", () => {
+  /* eslint-disable-next-line no-undef*/
+  chrome.tabs.executeScript({
+    code: "window.print();"
+  });
+});
+
 document.getElementById("search-wikipedia").addEventListener("click", () => {
   let query = document.getElementById("input-box").value;
   const url = `https://en.wikipedia.org/wiki/${query}`;
