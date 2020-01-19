@@ -1,3 +1,18 @@
+/* eslint-disable-next-line */
+chrome.storage.sync.get(["data"], items => {
+  let content = "";
+  items.data.forEach(history => {
+    content += `<a class="recent">${history}</a>`;
+  });
+  document.querySelector("#recent").innerHTML = content;
+  document.querySelectorAll(".recent").forEach(e => {
+    console.log(e);
+    e.addEventListener("click", () => {
+      document.querySelector("#input-box").value = e.innerHTML;
+    });
+  });
+});
+
 async function handleDefine() {
   let query = document.getElementById("input-box").value;
   if (query === "") {
@@ -68,11 +83,31 @@ async function handleData() {
 }
 
 document.getElementById("define-button").addEventListener("click", async () => {
-  handleDefine();
+  let string = document.querySelector("#input-box").value;
+  /* eslint-disable-next-line no-undef */
+  chrome.storage.sync.get(["data"], items => {
+    let data = [...items.data];
+    if (data.length > 2) data.pop();
+    data.unshift(string);
+    /* eslint-disable-next-line no-undef */
+    chrome.storage.sync.set({ data }, function() {
+      handleDefine();
+    });
+  });
 });
 
 document.getElementById("search-button").addEventListener("click", () => {
-  handleSearch();
+  let string = document.querySelector("#input-box").value;
+  /* eslint-disable-next-line no-undef */
+  chrome.storage.sync.get(["data"], items => {
+    let data = [...items.data];
+    if (data.length > 2) data.pop();
+    data.unshift(string);
+    /* eslint-disable-next-line no-undef */
+    chrome.storage.sync.set({ data }, function() {
+      handleSearch();
+    });
+  });
 });
 
 document.getElementById("clean-button").addEventListener("click", () => {
