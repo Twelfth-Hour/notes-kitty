@@ -163,7 +163,9 @@ document.getElementById("report-button").addEventListener("click", () => {
       let db = firebase.firestore();
       db.collection("bug-report").add({
         bug: result[0]
-      });
+      }).then(() =>{
+        alert("Bug has been successfully reported.");
+      })
     }
   );
 });
