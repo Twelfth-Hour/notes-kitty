@@ -37,7 +37,7 @@ In the end , an extension will appear on the screen and you can use the extensio
 
 ## Extension Demo
 
-![Notes-Kitty](src/img/extension.png)
+![Notes-Kitty](src/img/extension.jpg)
 
 ## Built With
 
