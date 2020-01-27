@@ -35,6 +35,10 @@ yarn format
 
 In the end , an extension will appear on the screen and you can use the extension to its fullest extension and explore the feature. 
 
+## Extension Demo
+
+![Notes-Kitty](src/img/extension.png)
+
 ## Built With
 
 * [Chrome Extension](https://developer.chrome.com/extensions) - Extensions are small software programs that customize the browsing experience. 
