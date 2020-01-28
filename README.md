@@ -4,7 +4,7 @@
 
 Want to make searching and organizing your queries easy? Our extension will open you the top links based on your query and not only that, you'll be able to remove all the advertisements and unncessary data on the website by cleaning the website with the click of one button. We also provide additional features including dark mode and custom editable notes on the current link itself. One can even add notes and it will be stored as a pdf file . This will make the creation and organization of notes much easier.
 
-### Prerequisites
+## Prerequisites
 
 1. Node
 2. Yarn
@@ -34,6 +34,10 @@ yarn format
 5. Switch to the developers mode and click ```Load Unpacked``` and select the ```notes-kitty``` folder and open it. 
 
 In the end , an extension will appear on the screen and you can use the extension to its fullest extension and explore the feature. 
+
+## Extension Demo
+
+![Notes-Kitty](src/img/extension.jpg)
 
 ## Built With
 
